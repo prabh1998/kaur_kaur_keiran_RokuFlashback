@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 08, 2020 at 07:04 PM
--- Server version: 10.3.20-MariaDB
+-- Generation Time: Apr 10, 2020 at 09:26 PM
+-- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_movies`
+-- Database: `db_rokuflashback`
 --
 
 -- --------------------------------------------------------
@@ -1110,6 +1110,36 @@ INSERT INTO `tbl_studio` (`studio_id`, `studio_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_tv`
+--
+
+DROP TABLE IF EXISTS `tbl_tv`;
+CREATE TABLE IF NOT EXISTS `tbl_tv` (
+  `tv_id` mediumint(8) UNSIGNED NOT NULL,
+  `tv_cover` varchar(75) NOT NULL,
+  `tv_title` varchar(125) NOT NULL,
+  `tv_year` varchar(5) NOT NULL,
+  `tv_storyline` text NOT NULL,
+  `tv_trailer` varchar(75) NOT NULL,
+  PRIMARY KEY (`tv_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tv_genre`
+--
+
+DROP TABLE IF EXISTS `tbl_tv_genre`;
+CREATE TABLE IF NOT EXISTS `tbl_tv_genre` (
+  `tv_genre_id` mediumint(8) NOT NULL,
+  `tv_id` mediumint(9) NOT NULL,
+  `genre_id` mediumint(9) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_urating`
 --
 
@@ -1137,6 +1167,22 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `user_ip` varchar(50) NOT NULL DEFAULT 'no',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tv_kids`
+--
+
+DROP TABLE IF EXISTS `tv_kids`;
+CREATE TABLE IF NOT EXISTS `tv_kids` (
+  `tv_id` mediumint(8) UNSIGNED NOT NULL,
+  `tv_cover` varchar(75) NOT NULL,
+  `tv_title` varchar(125) NOT NULL,
+  `tv_year` varchar(5) NOT NULL,
+  `tv_storyline` text NOT NULL,
+  `tv_trailer` varchar(75) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
