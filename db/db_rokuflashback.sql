@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 08, 2020 at 07:04 PM
+-- Generation Time: Apr 11, 2020 at 05:31 PM
 -- Server version: 10.3.20-MariaDB
 -- PHP Version: 7.3.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_movies`
+-- Database: `db_rokuflashback`
 --
 
 -- --------------------------------------------------------
@@ -1106,6 +1106,98 @@ INSERT INTO `tbl_studio` (`studio_id`, `studio_name`) VALUES
 (18, 'Warner Bros.'),
 (19, 'Fox 2000 Pictures'),
 (20, 'Weinstein Company');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tv`
+--
+
+DROP TABLE IF EXISTS `tbl_tv`;
+CREATE TABLE IF NOT EXISTS `tbl_tv` (
+  `tv_id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `tv_cover` varchar(75) NOT NULL,
+  `tv_title` varchar(125) NOT NULL,
+  `tv_year` varchar(5) NOT NULL,
+  `tv_storyline` text NOT NULL,
+  `tv_trailer` varchar(75) NOT NULL,
+  PRIMARY KEY (`tv_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_tv`
+--
+
+INSERT INTO `tbl_tv` (`tv_id`, `tv_cover`, `tv_title`, `tv_year`, `tv_storyline`, `tv_trailer`) VALUES
+(1, 'bewitched.jpg', 'Bewitched', '1964', 'Samantha falls in love with New York ad exec Darrin Stephens and marries him in the first episode of the sitcom. Then Darrin finds out that his new bride is one of a secret society of powerful witches and warlocks and that a twitch of her nose brings magic results. Thoroughly befuddled, Darrin makes her promise never to use her powers. She agrees and tries to settle into being the perfect suburban housewife. Her mother, Endora, however, has a different agenda. She hates that Samantha has married a mortal and continually tries to break them up. Sam\'s other spellbinding friends and family pop in and out of the Stephens household as Sam tries (and most of the time fails) to live without magic.', 'bewitched.mp4'),
+(2, 'full-house-show.jpg', 'full house show', '1987', 'Danny is a widower who is raising his three little girls after the death of his wife. But he has help from his musician brother-in-law, Jesse Katsopolis, and his best friend, comedian Joey Gladstone.', 'fullhouse.mp4'),
+(3, 'happy-days-show.jpg', 'Happy Days', '1974', 'Set in 1950s and 1960s Milwaukee, this series tells the story of the Cunningham family -- father Howard, mother Marion, son Richie and daughter Joanie. Howard owns a hardware store, while Marion stays at home. Richie\'s best friends are Potsie and Ralph. Arthur \"Fonzie\" Fonzarelli is the local bad boy, riding a motorcycle and filling his days with fixing cars and dating girls. During the show\'s run, Richie leaves home to join the U.S. Army.', 'happydays.mp4'),
+(4, 'roseanne-show.jpg', 'Roseanne', '1988', 'Explore life, death and everything in between through the relatable, hilarious and brutally honest lens of the working-class Conner household, which is located in the drab, fictional exurb of Langford, Ill. With the inimitable Roseanne Barr at its epicenter as the family\'s matriarch, the series tackles current issues with fresh stories and even more laughs. Roseanne is joined by her husband, Dan, and their children, D.J., Darlene and Becky. Roseanne\'s warm, but neurotic, sister Jackie rounds out the core of the family.', 'Roseanne.mp4'),
+(5, 'the-andy-griffith-show.jpg', 'The Andy Griffith', '1960', 'Andy Taylor is the sheriff of a quiet sleepy town with little crime to solve. He lives with his son and his elderly aunt, and spends his time managing his son.', 'theandygriffith.mp4'),
+(6, 'the-cosby-show.jpg', 'The Cosby show', '1984', '\"The Cosby Show\" centers on the lives of the Huxtables: obstetrician Cliff and his lawyer wife Claire, their daughters Sondra, Denise, Vanessa and Rudy, and son Theo. Based on the standup comedy of Bill Cosby, the show focused on his observations of family life. Although based on comedy, the series also addresses some more serious topics, such as learning disabilities and teen pregnancy.', 'thecosby.mp4'),
+(7, 'the-goldern-girls-show.jpg', 'The Goldern Girls show', '1985', 'Girls from different parts of the country participate in a series of contests and demonstrate their unique skills and talent to win the coveted title.', 'thegoldengirls.mp4'),
+(8, 'the-fall-guy-show.jpg', 'The Fall Guy', '1985', 'Girls from different parts of the country participate in a series of contests and demonstrate their unique skills and talent to win the coveted title.', 'thefallguy.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tv_genre`
+--
+
+DROP TABLE IF EXISTS `tbl_tv_genre`;
+CREATE TABLE IF NOT EXISTS `tbl_tv_genre` (
+  `tv_genre_id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `tv_id` mediumint(9) NOT NULL,
+  `genre_id` mediumint(9) NOT NULL,
+  PRIMARY KEY (`tv_genre_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_tv_genre`
+--
+
+INSERT INTO `tbl_tv_genre` (`tv_genre_id`, `tv_id`, `genre_id`) VALUES
+(1, 1, 3),
+(2, 2, 4),
+(3, 3, 15),
+(4, 4, 3),
+(5, 5, 10),
+(6, 6, 4),
+(7, 7, 3),
+(8, 8, 3),
+(9, 9, 16),
+(10, 10, 3),
+(11, 11, 3),
+(12, 12, 7),
+(13, 13, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tv_kids`
+--
+
+DROP TABLE IF EXISTS `tbl_tv_kids`;
+CREATE TABLE IF NOT EXISTS `tbl_tv_kids` (
+  `tv_id` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `tv_cover` varchar(75) NOT NULL,
+  `tv_title` varchar(125) NOT NULL,
+  `tv_year` varchar(5) NOT NULL,
+  `tv_storyline` text NOT NULL,
+  `tv_trailer` varchar(75) NOT NULL,
+  PRIMARY KEY (`tv_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_tv_kids`
+--
+
+INSERT INTO `tbl_tv_kids` (`tv_id`, `tv_cover`, `tv_title`, `tv_year`, `tv_storyline`, `tv_trailer`) VALUES
+(9, 'winnie-the-pooh-1977.jpg', 'Winnie The Pooh', '1977', 'Sebastian Cabot narrates the adventures of bumbling bear Winnie the Pooh as he battles a nest of vicious bees over a trove of honey, weathers a terrible wind storm and endures the foibles of the hyperactive tiger Tigger, all while singing and bumbling his way through the Hundred Acre Wood. Kanga, Piglet, Owl, Rabbit and Eeyore round out the menagerie in this trio of animated tales adapted from A.A. Milne\'s celebrated series of children\'s books.', 'winniethepooh.mp4'),
+(10, 'thomes-friends-kids-show.jpg', 'Thomes Friends', '1984', 'Based on a series of children\'s books, \"Thomas & Friends\" features Thomas the Tank Engine going on adventures with his fellow locomotives on the island of Sodor. Thomas is apt to get into trouble by trying too hard to be, in his words, a \"really useful engine,\" attempting to do things that are best left to bigger engines. Other members of Sir Topham Hatt\'s railway include junior engine Percy, Thomas\' best friend, who is always willing to help, and big engine Gordon -- the fastest and most powerful member of the team -- who uses his superior strength to help the smaller engines get out of trouble.', 'thomesfriends.mp4'),
+(11, 'pokemon-kids-show.jpg', 'Pokemon', '1997', 'Pokémon is a series of video games developed by Game Freak and published by Nintendo and The Pokémon Company as part of the Pokémon media franchise', 'pokemon.mp4'),
+(12, 'sesame-street', 'Sesame Street', '1969', 'A longtime favorite of children and adults, and a staple of PBS, \"Sesame Street\" bridges many cultural and educational gaps with a fun program. Big Bird leads a cast of characters teaching children numbers, colors and the alphabet. Bert and Ernie, Oscar the Grouch and Grover are just a few of the other creatures involved in this show, set on a city street full of valuable learning opportunities.', 'sesamestreet.mp4'),
+(13, 'batman-tvshow.jpg', 'Batman', '1966', 'Eccentric Gotham City tycoon Bruce Wayne dons tights to fight crime as Batman, aided by pal Dick Ward as equally Spandex-clad Robin, in this \'60s camp classic. Together, they fight evildoers such as the Penguin, the Joker, the Riddler, Egghead, Catwoman and Mr. Freeze.', 'batman.mp4');
 
 -- --------------------------------------------------------
 
