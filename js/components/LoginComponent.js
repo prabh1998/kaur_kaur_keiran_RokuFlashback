@@ -1,28 +1,40 @@
 export default {
     template: `
-        <div class="container">
-            <div class="jumbotron roku-jumbotron">
-                <h1 class="display-4">Welcome to Flashback!</h1>
-                <p class="lead">Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.</p>
-                <hr class="my-4">
-                <form @submit.prevent="login">
-                    <div class="form-row align-items-center">
-                        <div class="col-md-3 my-1">
-                            <label class="sr-only" for="inlineFormInputName">Name</label>
-                            <input  v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="username" required>
-                        </div>
-
-                        <div class="col-md-3 my-1">
-                            <label class="sr-only" for="inlineFormPassword">Name</label>
-                            <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword" placeholder="password" required>
-                        </div>
-
-                        <div class="col-auto my-1">
-                            <button type="submit" class="btn btn-primary">Go!</button>
-                        </div>
-                    </div>
-                </form>            
+        <div id="container">
+            <div id="help">
+                <a href="help.html">Help</a>
             </div>
+            <div id="stacked-logo">
+                <img src="images/logo-stacked.svg" alt="Roku Flashback Logo">
+            </div>
+            <div id="welcome">
+                <p>Welcome to Roku Flashback!</p>
+                <br>
+                <p>Please enjoy Tv shows, 
+                Movies and Musics.</p>
+            </div>
+            <form>
+                <div class="login-form">
+                    <div class="username-field">
+                        <label for="inlineFormInputName"></label>
+                        <input v-model="input.username" type="text" placeholder="username" required>
+                    </div>
+
+                    <div class="password-field">
+                        <label for="inlineFormPassword"></label>
+                        <input v-model="input.password" type="password" placeholder="password" required>
+                    </div>
+
+                    <div class="submit-button">
+                        <button v-on:click.prevent="login()" type="submit">Sign In</button>
+                    </div>
+                </div>
+                <div id="new-to-roku">
+                    <a href="sign-up.html">New to Roku?  Sign up now.</a>
+                </div>
+            </form>
+
+            
         </div>
      `,
 
@@ -38,40 +50,37 @@ export default {
 
     methods: {
         login() {
-            //console.log(this.$parent.mockAccount.username);
-            // debugger;
-            if(this.input.username != "" && this.input.password != "") {
-                //use the FormData object to collect and send our params
+
+            if (this.input.username != "" && this.input.password != "") {
+                // fetch the user from the DB
+                // generate the form data
                 let formData = new FormData();
 
                 formData.append("username", this.input.username);
                 formData.append("password", this.input.password);
 
-                let url = "./includes/index.php?user=true";
+                let url = `./admin/admin_login.php`;
 
                 fetch(url, {
-                    method: "POST",
+                    method: 'POST',
                     body: formData
                 })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-
-                    // tell the app that we have a successfull logged in
-                    //and store the user object taht we retrieved
-
-                    //true below means that authentication worked
-                    //dat is the user we retrieved  
-
-                    this.$emit("authenticated", true, data[0]);
-
-                    //push the user to the users page
-                    this.$router.replace({name: "users"});
-                })
-                .catch((err) => console.log(err));
-
-            }else{
-                console.error("inputs can't be blank!");
+                    .then(res => res.json())
+                    .then(data => {
+                        if (typeof data != "object") { // means that we're not getting a user object back
+                            console.warn(data);
+                            // just for testing
+                            alert("authentication failed, please try again");
+                        } else {
+                            this.$emit("authenticated", true, data);
+                            this.$router.replace({ name: "users" });
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            } else {
+                console.log("A username and password must be present");
             }
         }
     }

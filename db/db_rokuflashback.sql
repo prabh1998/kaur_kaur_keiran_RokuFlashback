@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 08, 2020 at 07:04 PM
--- Server version: 10.3.20-MariaDB
+-- Generation Time: Apr 11, 2020 at 05:57 PM
+-- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_movies`
+-- Database: `db_rokuflashback`
 --
 
 -- --------------------------------------------------------
@@ -1136,7 +1136,14 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `user_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `user_ip` varchar(50) NOT NULL DEFAULT 'no',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`) VALUES
+(1, 'prabhjot', 'kaur', 'prabh', 'prabhbhatti507@gmail.com', '2020-04-11 17:57:16', 'no');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
