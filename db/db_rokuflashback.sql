@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 11, 2020 at 05:31 PM
--- Server version: 10.3.20-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Apr 12, 2020 at 08:44 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `tbl_comments` (
   `comments_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `comments_auth` varchar(125) NOT NULL,
   `comments_copy` text NOT NULL,
-  `comments_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `comments_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`comments_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1225,10 +1225,17 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
   `user_name` varchar(250) NOT NULL,
   `user_pass` varchar(250) NOT NULL,
   `user_email` varchar(250) NOT NULL,
-  `user_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_ip` varchar(50) NOT NULL DEFAULT 'no',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`) VALUES
+(1, 'Keiran', 'kman', '123', 'keiranburner@gmail.com', '2020-04-12 20:43:29', 'no');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
