@@ -25,16 +25,18 @@
     <title>Login Page</title>
 </head>
 <body>
-    <h2>Login Page</h2>
-    <?php echo !empty($message)? $message: ''; ?>
-    <form action="admin_login.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="">
+    <section class="loginPage">
+        <h2>Login Page</h2>
+        <?php echo !empty($message)? $message: ''; ?>
+        <form action="admin_login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="">
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" value="">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="">
 
-        <button name="submit">Submit</button>
-    </form>
+            <button name="submit">Sign In</button>
+        </form>
+    </section>
 </body>
 </html>
