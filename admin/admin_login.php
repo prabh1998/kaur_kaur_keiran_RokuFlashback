@@ -26,8 +26,6 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-
-    
 </head>
 <body>
     <section class="loginPage">
