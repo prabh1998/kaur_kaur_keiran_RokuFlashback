@@ -1,7 +1,12 @@
+// sass --watch sass:public/css --style compressed
+
+// Folder structer created by Prabh Jot the 1st
+
 @import '_vars';
 @import 'modules/_main';
-@import 'modules/_usercomponent';
-@import 'modules/_userhomecomponent';
-@import 'modules/_footer';
-@import 'modules/_login';
-@import 'modules/mediaqueries';
+@import 'modules/admin_login';
+@import 'modules/admin_home';
+@import 'modules/admin_createuser';
+@import 'modules/admin_edituser';
+@import 'modules/admin_deleteuser';
+// work on login file. create page, edit page and delete all the same style
