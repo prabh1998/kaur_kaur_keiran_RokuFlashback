@@ -1,1 +1,1 @@
-.loginPage{background-color:#000}.loginPage h2{font-size:40px}/*# sourceMappingURL=admin_login.css.map */
+body{background-image:url(../../layout/login_background.jpg);background-size:cover}.loginPage{background-color:rgba(0,0,0,.8);width:700px;height:400px;margin-top:35vh;margin-left:auto;margin-right:auto}/*# sourceMappingURL=admin_login.css.map */

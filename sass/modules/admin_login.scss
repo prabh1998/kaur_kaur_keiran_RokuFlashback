@@ -1,9 +1,15 @@
-.loginPage {
-    background-color: black;
+body {
+    background-image: url(../../layout/login_background.jpg);
+    background-size: cover;
 }
 
-.loginPage h2 {
-    font-size: 40px;
+.loginPage {
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    width: 700px;
+    height: 400px;
+    margin-top: 35vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 

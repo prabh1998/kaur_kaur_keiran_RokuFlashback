@@ -24,8 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Page</title>
 
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../public/css/main.css">
 </head>
 <body>
     <section class="loginPage">
@@ -34,10 +33,10 @@
         <form action="admin_login.php" method="post">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value="">
-
+            <br>
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" value="">
-
+            <br>
             <button name="submit">Sign In</button>
         </form>
     </section>

@@ -1,17 +1,1 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 8 | @import 'pages/admin_login';
- *   |         ^^^^^^^^^^^^^^^^^^^
- *   '
- *   sass\master.scss 8:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 8 \2502  @import 'pages/admin_login';\a   \2502          ^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\master.scss 8:9  root stylesheet";
-}
+*{border:0;padding:0;margin:0}html{position:relative;min-height:100%}body{font:14px "Lucida Grande",Helvetica,Arial,sans-serif;background-color:blue;color:#fff;margin-bottom:100px;background:url(../layout/login_background.jpg) no-repeat}a{color:#00b7ff;text-decoration:none}header{background-color:#1a1818;padding:12px 14px;position:fixed;z-index:500;width:100%}header span{margin-left:15px;font-weight:bolder;font-size:1.5em;text-transform:uppercase;position:relative;top:5px}nav:not(.side-nav) ul{right:3em;list-style-type:none;margin-bottom:0}nav:not(.side-nav) ul li{display:inline-block;font-size:1.75em;padding:0 .2em;cursor:pointer}.toast{position:absolute;right:1em;top:4.25rem;z-index:200;color:#333;min-width:175px}.toast .toast-body span{margin-left:.8rem;position:relative;top:-2px;font-weight:bolder}.fa-exclamation-triangle{color:red;font-size:1.5em}.container>div:first-of-type{margin-top:53px}.display-4{font-size:2.25rem}.user-message{text-align:center;font-size:2rem}body{background-image:url(../../layout/login_background.jpg);background-size:cover}.loginPage{background-color:rgba(0,0,0,.8);width:700px;height:400px;margin-top:35vh;margin-left:auto;margin-right:auto}/*# sourceMappingURL=master.css.map */
