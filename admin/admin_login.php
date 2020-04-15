@@ -36,7 +36,10 @@
 
         <button name="submit">Submit</button>
     </form>
-    <a href="admin_createuser.php">Create User</a>
-    <a href="../index.php">Home Page</a>
+    <!-- I put the link here to allow the user to go to create user or homepage
+     if the want but it show conflicts when I pushed to the github -->
+     
+    <!-- <a href="admin_createuser.php">Create User</a>
+    <a href="../index.php">Home Page</a> -->
 </body>
 </html>
