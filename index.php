@@ -26,6 +26,8 @@ if (isset($_GET['filter'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to the Movie CMS!</title>
+
+    <link rel="stylesheet" href="../public/css/main.css">
 </head>
 <body>
     <?php include 'templates/header.php';?>
