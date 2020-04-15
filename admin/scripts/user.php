@@ -16,7 +16,7 @@ function createUser($fname, $username, $password, $email){
             ':email'=>$email,
         )
     );
-    //TODO: redirect to index.php if creat user successfully
+    //TODO: redirect to index.php if create user successfully
     // otherwise, return a error message
     if($create_user_result){
         redirect_to('index.php');
@@ -49,14 +49,34 @@ function getAllUsers(){
     $pdo = Database::getInstance()->getConnection();
 
     $get_user_query = 'SELECT * FROM tbl_user';
-    $users = $pdo->query($get_user_query);
+    $get_user_set = $pdo->prepare($get_user_query);
+    $get_user_result = $get_user_set->execute();
 
-    if($users){
-        return $users;
-    }else{
-        return false;
+    $users = array();
+
+    if ($get_user_result) {
+        while($user = $get_user_set->fetch(PDO::FETCH_ASSOC)) {
+            // Define all the users' info as defined in db
+            // into the users array
+
+            $currentuser = array();
+
+            $currentuser['id'] = $user['user_id'];
+            $currentuser['admin'] = $user['user_admin'];
+            $currentuser['avatar'] = $user['user_avatar'];
+            $currentuser['permission'] = $user['user_permission'];
+            $currentuser['username'] = $user['user_name'];
+           
+
+            $users[] = $currentuser;
+        }
+
+        return json_encode($users);
+    } else {
+        return 'There was a problem getting the users';
     }
 }
+
 
 function editUser($id, $fname, $username, $password, $email){
     //TODO: set up database connection

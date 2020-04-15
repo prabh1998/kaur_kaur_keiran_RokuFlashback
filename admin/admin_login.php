@@ -36,5 +36,7 @@
 
         <button name="submit">Submit</button>
     </form>
+    <a href="admin_createuser.php">Create User</a>
+    <a href="../index.php">Home Page</a>
 </body>
 </html>

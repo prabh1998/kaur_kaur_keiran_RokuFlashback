@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 11, 2020 at 05:31 PM
+-- Generation Time: Apr 15, 2020 at 07:03 PM
 -- Server version: 10.3.20-MariaDB
 -- PHP Version: 7.3.12
 
@@ -1220,15 +1220,26 @@ CREATE TABLE IF NOT EXISTS `tbl_urating` (
 
 DROP TABLE IF EXISTS `tbl_user`;
 CREATE TABLE IF NOT EXISTS `tbl_user` (
-  `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` mediumint(8) NOT NULL AUTO_INCREMENT,
   `user_fname` varchar(250) NOT NULL,
   `user_name` varchar(250) NOT NULL,
   `user_pass` varchar(250) NOT NULL,
   `user_email` varchar(250) NOT NULL,
-  `user_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `user_ip` varchar(50) NOT NULL DEFAULT 'no',
+  `user_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
+  `user_ip` varchar(50) NOT NULL,
+  `user_avatar` varchar(20) DEFAULT NULL,
+  `user_permission` int(11) NOT NULL,
+  `user_admin` int(1) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_avatar`, `user_permission`, `user_admin`) VALUES
+(1, 'prabh', 'prabh', '123', 'prabh@gmail.com', '0000-00-00 00:00:00', '', 'prabh', 1, 1),
+(2, 'keiran', 'keiran', '123', 'keiran@gmail.com', '0000-00-00 00:00:00', '', 'keiran', 1, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
