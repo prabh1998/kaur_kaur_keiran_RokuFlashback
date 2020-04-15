@@ -25,8 +25,8 @@
     <title>Login Page</title>
 </head>
 <body>
-    <h2>Login Page</h2>
-    <?php echo !empty($message)? $message: ''; ?>
+    <!-- <h2>Login Page</h2>
+    
     <form action="admin_login.php" method="post">
         <label for="username">Username:</label>
         <input type="text" name="username" id="username" value="">
@@ -35,10 +35,10 @@
         <input type="password" name="password" id="password" value="">
 
         <button name="submit">Submit</button>
-    </form>
+    </form> -->
     <!-- I put the link here to allow the user to go to create user or homepage
      if the want but it show conflicts when I pushed to the github -->
-     
+
     <!-- <a href="admin_createuser.php">Create User</a>
     <a href="../index.php">Home Page</a> -->
 </body>
