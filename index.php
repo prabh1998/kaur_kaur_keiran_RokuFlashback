@@ -27,9 +27,9 @@ if (isset($_GET['filter'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to the Movie CMS!</title>
 
-    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="public/css/main.css">
 </head>
-<body>
+<body id="movieList">
     <?php include 'templates/header.php';?>
     <?php while ($row = $getMovies->fetch(PDO::FETCH_ASSOC)): ?>
         <div class="movie-item">

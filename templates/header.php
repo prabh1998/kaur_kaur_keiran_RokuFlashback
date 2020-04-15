@@ -1,5 +1,5 @@
 <header>
-    <h2>This is the Header</h2>
+    <h2>Welcome to Roku</h2>
     <nav class="filterNav">
         <ul>
             <li><a href="index.php?filter=action">Action</a></li>
