@@ -19,7 +19,9 @@ When you're done, run docker-compose down
 Your app is running on http://localhost:8010  
 phpmyadmin is running on http://localhost:8011
 
-
+## Login Test
+username - prabh 
+pass - 123
 #### Dependencies:
 We've rolled our own PHP - no frameworks, just some classes and a bit of procedural code.
 
