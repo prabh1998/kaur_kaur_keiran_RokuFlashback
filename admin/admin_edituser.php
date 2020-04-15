@@ -28,23 +28,25 @@
     <link rel="stylesheet" href="../public/css/main.css">
 </head>
 <body>
-    <h2>Edit User</h2>
-    <?php echo !empty($message)? $message : '';?>
-    <form action="admin_edituser.php" method="post">
-        <?php while($info = $user->fetch(PDO::FETCH_ASSOC)): ?>
-            <label>First Name:</label>
-            <input type="text" name="fname" value="<?php echo $info['user_fname'];?>"><br><br>
+    <section class="editContent">
+        <h2>Edit User</h2>
+        <?php echo !empty($message)? $message : '';?>
+        <form action="admin_edituser.php" class="editForm" method="post">
+            <?php while($info = $user->fetch(PDO::FETCH_ASSOC)): ?>
+                <label>First Name:</label>
+                <input type="text" name="fname" value="<?php echo $info['user_fname'];?>"><br><br>
 
-            <label>Username:</label>
-            <input type="text" name="username" value="<?php echo $info['user_name'];?>"><br><br>
+                <label>Username:</label>
+                <input type="text" name="username" value="<?php echo $info['user_name'];?>"><br><br>
 
-            <label>Password:</label>
-            <input type="text" name="password" value="<?php echo $info['user_pass'];?>"><br><br>
+                <label>Password:</label>
+                <input type="text" name="password" value="<?php echo $info['user_pass'];?>"><br><br>
 
-            <label>Email:</label>
-            <input type="text" name="email" value="<?php echo $info['user_email'];?>"><br><br>
-        <?php endwhile;?>
-        <button type="submit" name="submit">Edit Account</button>
-    </form>
+                <label>Email:</label>
+                <input type="text" name="email" value="<?php echo $info['user_email'];?>"><br><br>
+            <?php endwhile;?>
+            <button type="submit" name="submit">Edit Account</button>
+        </form>
+    </section>
 </body>
 </html>

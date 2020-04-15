@@ -28,13 +28,18 @@
 </head>
 <body>
     <section class="loginPage">
-        <h2>Login Page</h2>
+        <h2>Login to your Roku Account</h2>
         <?php echo !empty($message)? $message: ''; ?>
-        <form action="admin_login.php" method="post">
+        <form action="admin_login.php" class="loginForm" method="post">
             <label for="username">Username:</label>
+            <br>
+            <br>
             <input type="text" name="username" id="username" value="">
             <br>
+            <br>
             <label for="password">Password:</label>
+            <br>
+            <br>
             <input type="password" name="password" id="password" value="">
             <br>
             <button name="submit">Sign In</button>

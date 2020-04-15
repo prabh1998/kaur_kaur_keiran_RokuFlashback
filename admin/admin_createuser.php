@@ -24,22 +24,23 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create User</title>
 
-    <link rel="stylesheet" href="../css/master.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../public/css/main.css">
 </head>
 <body>
-    <h2>Create User</h2>
-    <?php echo !empty($message)? $message: ''; ?>
-    <form action="admin_createuser.php" method="post">
-        <label>First Name</label>
-        <input type="text" name="fname" value=""><br><br>
-        <label>Username</label>
-        <input type="text" name="username" value=""><br><br>
-        <label>Password</label>
-        <input type="text" name="password" value=""><br><br>
-        <label>Email</label>
-        <input type="email" name="email" value=""><br><br>
-        <button name="submit">Create User</button>
-    </form>
+    <section class="createContent">
+        <h2>Create User</h2>
+        <?php echo !empty($message)? $message: ''; ?>
+        <form action="admin_createuser.php" class="createForm" method="post">
+            <label>First Name</label><br>
+            <input type="text" name="fname" value=""><br><br>
+            <label>Username</label><br>
+            <input type="text" name="username" value=""><br><br>
+            <label>Password</label><br>
+            <input type="text" name="password" value=""><br><br>
+            <label>Email</label><br>
+            <input type="email" name="email" value=""><br><br>
+            <button name="submit">Create User</button>
+        </form>
+    </section>
 </body>
 </html>

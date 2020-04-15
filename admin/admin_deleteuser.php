@@ -26,28 +26,31 @@
 
     <link rel="stylesheet" href="../public/css/main.css">
 </head>
+
 <body>
-    <h2>Time to delete some users...</h2>
-    <?php echo !empty($message)?$message:'';?>
-    <table>
-        <thead>
-            <tr>
-                <th>User ID</th>
-                <th>User Name</th>
-                <th>User Email</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php while($user = $users->fetch(PDO::FETCH_ASSOC)):?>
-            <tr>
-                <td><?php echo $user['user_id'];?></td>
-                <td><?php echo $user['user_name'];?></td>
-                <td><?php echo $user['user_email'];?></td>
-                <td><a href="admin_deleteuser.php?id=<?php echo $user['user_id'];?>">Delete</a></td>
-            </tr>
-        <?php endwhile;?>
-        </tbody>
-    </table>
+    <section class="deleteContent">
+        <h2>Who do you want to delete?</h2>
+        <?php echo !empty($message)?$message:'';?>
+        <table>
+            <thead id="thead">
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>User Email</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            <?php while($user = $users->fetch(PDO::FETCH_ASSOC)):?>
+                <tr>
+                    <td><?php echo $user['user_id'];?></td>
+                    <td><?php echo $user['user_name'];?></td>
+                    <td><?php echo $user['user_email'];?></td>
+                    <td><a href="admin_deleteuser.php?id=<?php echo $user['user_id'];?>">Delete</a></td>
+                </tr>
+            <?php endwhile;?>
+            </tbody>
+        </table>
+    </section>
 </body>
 </html>

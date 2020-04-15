@@ -13,11 +13,19 @@
     <link rel="stylesheet" href="../public/css/main.css">
 </head>
 <body>
-    <h2>Welcome! <?php echo $_SESSION['user_name'];?></h2>
-    
-    <a href="admin_createuser.php">Create User</a>
-    <a href="admin_edituser.php">Edit User</a>
-    <a href="admin_deleteuser.php">Delete User</a>
-    <a href="admin_logout.php">Sign Out</a>
+    <section class="homeContent">
+        <h2>Welcome! <?php echo $_SESSION['user_name'];?></h2>
+        
+        <a href="admin_createuser.php">Create User</a>
+        <br>
+        <br>
+        <a href="admin_edituser.php">Edit User</a>
+        <br>
+        <br>
+        <a href="admin_deleteuser.php">Delete User</a>
+        <br>
+        <br>
+        <a href="admin_logout.php">Sign Out</a>
+    </section>
 </body>
 </html>
