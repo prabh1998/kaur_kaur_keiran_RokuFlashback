@@ -5,6 +5,7 @@ if (isset($_GET['filter'])) {
     //Filter
     $args = array(
         'tbl' => 'tbl_movies',
+        'tblkids' => 'tbl_kids',
         'tbl2' => 'tbl_genre',
         'tbl3' => 'tbl_mov_genre',
         'col' => 'movies_id',
@@ -15,7 +16,9 @@ if (isset($_GET['filter'])) {
     $getMovies = getMoviesByFilter($args);
 } else {
     $movie_table = 'tbl_movies';
+    $movie_table_kids = 'tbl_kids';
     $getMovies = getAll($movie_table);
+    $getMoviesKids = getAll($movie_table_kids);
 }
 ?>
 

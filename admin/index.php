@@ -26,6 +26,7 @@
     }
 
     // tv shows filters
+    // Try to filter the music by following video filter
     if(isset($_GET['filter_tv'])){
         $args = array(
             'tbl' => $tbl,
